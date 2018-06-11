@@ -84,11 +84,8 @@ public class AkkaActorsUnitTest {
     // myActorRef.tell(Kill.getInstance(), ActorRef.noSender());
 
     ActorRef readingActorRef = system.actorOf(ReadingActor.props(TEXT), "readingActor");
-    readingActorRef.tell(new ReadingActor.ReadLines(), ActorRef.noSender()); // ActorRef.noSender()
-                                                                             // means the sender ref
-                                                                             // is
-                                                                             // akka://test-system/deadLetters
-
+    readingActorRef.tell(new ReadingActor.ReadLines(), ActorRef.noSender());
+    // ActorRef.noSender() means the sender ref is akka://test-system/deadLetters
     // Future<Terminated> terminateResponse = system.terminate();
   }
 
